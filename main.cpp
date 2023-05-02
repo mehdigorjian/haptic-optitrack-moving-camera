@@ -259,7 +259,7 @@ void glut_main(int argc, char** argv) {
     glutAddMenuEntry("push point", 0);
     glutAddMenuEntry("pop point", 1);
     glutAddMenuEntry("calibrate", 2);
-    glutAddMenuEntry("camera", 3);
+    // glutAddMenuEntry("camera", 3);
 
     // attache to the menu
     glutAttachMenu(GLUT_RIGHT_BUTTON);
@@ -271,8 +271,8 @@ void glut_main(int argc, char** argv) {
     hduVector3Dd eyepoint, lookat, up;
     DisplayObject->getCamera(&fov, &nearplane, &farplane, &eyepoint, &lookat, &up);
 
-    // eyepoint[2] += 23.;  // pull back by 100
-    eyepoint[2] += eye[2];  // pull back by 100
+    eyepoint[2] += 23.;  // pull back by 100
+    // eyepoint[2] += eye[2];  // pull back by 100
 
     nearplane += 10.;  // recenter the haptic workspace (adjust by 20)
     farplane += 100.;
@@ -615,9 +615,9 @@ void glutMenuFunction(int MenuID) {
         matrix_flag = true;
     }
 
-    if (MenuID == 3) {
-        eye[0] += 3.;
-        eye[1] += 1.;
-        eye[2] += 5.;
-    }
+    // if (MenuID == 3) {
+    //     eye[0] += 3.;
+    //     eye[1] += 1.;
+    //     eye[2] += 5.;
+    // }
 }
